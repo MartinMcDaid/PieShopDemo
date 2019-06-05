@@ -1,8 +1,23 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model IEnumerable<PieShopDemo.Models.Pie>
+@{
+    ViewData["Title"] = "Petes' Pie Shop";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Welcome to Petes' Big Pie Shop</h1>
+</div>
+
+<div class="row">
+    @foreach (var pie in Model)
+    {
+        <div class="col-sm-12 col-md-6 col-lg-4">
+            <div class="thumbnail">
+                <h2>
+                    <a asp-controller="Home" asp-action="ViewDetails" asp-route-id="@pie.Id">@pie.Name</a>
+                </h2>
+                <img src="@pie.ImageThumbnailUrl" alt="">
+                <h3>@pie.Price</h3>
+            </div>
+        </div>
+    }
 </div>

@@ -42,8 +42,16 @@ html {
 }
 
 body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background-image: url('../images/wavy-smooth-lines-pattern-background_1017-14206.jpg');
+    background-repeat: repeat;
+}
+.bodycontent{
+    padding-left:20px;
+    padding-right:20px;
 }
 .footer {
   position: absolute;
