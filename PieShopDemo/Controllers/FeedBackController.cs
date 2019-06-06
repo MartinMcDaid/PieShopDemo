@@ -23,5 +23,21 @@ namespace PieShopDemo.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public IActionResult Index(FeedBack feedBack)
+        {
+            if(ModelState.IsValid)
+            {
+                _feedbackRepository.AddFeedBack(feedBack);
+                return RedirectToAction("FeedBackComplete");
+            }
+            return View(feedBack);
+        }
+
+        public IActionResult FeedBackComplete()
+        {
+            return View();
+        }
     }
 }
