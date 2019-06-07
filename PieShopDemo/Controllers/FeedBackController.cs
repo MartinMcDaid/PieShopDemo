@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PieShopDemo.Models;
 
@@ -9,6 +10,7 @@ using PieShopDemo.Models;
 
 namespace PieShopDemo.Controllers
 {
+    [Authorize]
     public class FeedBackController : Controller
     {
         private readonly IFeedbackRepository _feedbackRepository;
